@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="styles3.css">
+  <title>Order</title>
+  
+  <style>
+    /* CSS Styling for the Order Page */
+    /* Add your custom styling here */
+  </style>
+  <script>
+    // JavaScript for the Order Page
+    // Add your JavaScript code here
+  </script>
+</head>
+<body>
+  <!-- Banner Section -->
+  <header>
+    <h1>Welcome to Gerard Specs Company</h1>
+    <p>Your Source for High-Quality PC Specs</p>
+  </header>
+
+  <!-- Navigation Bar Section -->
+  <nav>
+    <ul>
+      <li><a href="Web Design Finals.html">Home</a></li>
+      <li><a href="product-gallery.html">Product Gallery</a></li>
+      <li><a href="order.html">Order</a></li>
+    </ul>
+  </nav>
+
+  <!-- Body Section -->
+  <main>
+    <h2>Order</h2>
+    <form id="order-form">
+      <div class="product">
+        <!-- Product 1 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="Intel Core i7-11700K">
+          <img src="product1.jfif" alt="Product 1">
+          <h3>Intel Core i7-11700K</h3>
+          <p>8-Core Processor</p>
+          <p class="price">$399</p>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="NVIDIA GeForce RTX 3080">
+          <img src="product2.jfif" alt="Product 2">
+          <h3>NVIDIA GeForce RTX 3080</h3>
+          <p>10GB GDDR6X Graphics Card</p>
+          <p class="price">$999</p>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="AMD Ryzen 9 5900X">
+          <img src="product3.jfif" alt="Product 3">
+          <h3>AMD Ryzen 9 5900X</h3>
+          <p>12-Core Processor</p>
+          <p class="price">$549</p>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="ASUS ROG Strix RTX 3090">
+          <img src="product4.jfif" alt="Product 4">
+          <h3>ASUS ROG Strix RTX 3090</h3>
+          <p>24GB GDDR6X Graphics Card</p>
+          <p class="price">$1999</p>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="Corsair Vengeance LPX 16GB">
+          <img src="product5.jfif" alt="Product 5">
+          <h3>Corsair Vengeance LPX 16GB</h3>
+          <p>DDR4 RAM</p>
+          <p class="price">$89</p>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="Samsung 970 EVO Plus">
+          <img src="product6.jfif" alt="Product 6">
+          <h3>Samsung 970 EVO Plus</h3>
+          <p>1TB NVMe SSD</p>
+          <p class="price">$199</p>
+        </div>
+        
+        <!-- Product 7 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="Seagate BarraCuda 2TB">
+          <img src="product7.jfif" alt="Product 7">
+          <h3>Seagate BarraCuda 2TB</h3>
+          <p>3.5" Hard Drive</p>
+          <p class="price">$69</p>
+        </div>
+        
+        <!-- Product 8 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="Gigabyte AORUS X570">
+          <img src="product8.jfif" alt="Product 8">
+          <h3>Gigabyte AORUS X570</h3>
+          <p>ATX Motherboard</p>
+          <p class="price">$229</p>
+        </div>
+        
+        <!-- Add more product items as needed -->
+        
+        <!-- Product 9 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="Cooler Master Hyper 212">
+          <img src="product9.jfif" alt="Product 9">
+          <h3>Cooler Master Hyper 212</h3>
+          <p>CPU Cooler</p>
+          <p class="price">$49</p>
+        </div>
+        
+        <!-- Product 10 -->
+        <div class="product-item">
+          <input type="checkbox" name="product" value="EVGA SuperNOVA 750W">
+          <img src="product10.jfif" alt="Product 10">
+          <h3>EVGA SuperNOVA 750W</h3>
+          <p>80+ Gold Power Supply</p>
+          <p class="price">$119</p>
+        </div>
+      </div>
+
+      <!-- Customer Information -->
+      <h2>Customer Information</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+      <br>
+      
+      <!-- Submit Button -->
+      <button type="submit" onclick="submitOrder()">Place Order</button>
+    </form>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Contact us at info@gerardspecs.com | Phone: 123-456-7890</p>
+    <p>Follow us on <a href="https://www.twitter.com/gerardspecs">Twitter</a> and <a href="https://www.instagram.com/gerardspecs">Instagram</a></p>
+  </footer>
+
+  <!-- JavaScript Code -->
+  <script>
+    function submitOrder() {
+      // Get the form and selected products
+      const form = document.getElementById('order-form');
+      const selectedProducts = Array.from(form.querySelectorAll('input[name="product"]:checked')).map(input => input.value);
+      
+      // Get customer information
+      const name = form.querySelector('#name').value;
+      const email = form.querySelector('#email').value;
+      const address = form.querySelector('#address').value;
+      
+      // Validate form inputs
+      if (selectedProducts.length === 0 || !name || !email || !address) {
+        alert('Please fill in all required information and select at least one product.');
+        return;
+      }
+      
+      // Calculate total amount
+      const totalAmount = selectedProducts.length * 399;
+      
+      // Display order summary and confirmation
+      const confirmationMessage = `Thank you, ${name}! Your order has been placed.\n\nOrder Summary:\n\n- Products: ${selectedProducts.join(", ")}\n- Total Amount: $${totalAmount}\n\nWe will contact you at ${email} for further details.`;
+      alert(confirmationMessage);
+      
+      // Reset the form
+      form.reset();
+    }
+  </script>
+</body>
+
+</html>
